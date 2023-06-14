@@ -7,7 +7,7 @@
 
 
 
-## Entity의 기본생성자는 public 또는 protected!
+## Entity의 기본생성자(public, protected) 
 
 ### 기본생성자가 필요한 이유
 
@@ -30,6 +30,36 @@ JPA 역시 데이터를 DB에서 조회해 온 뒤 객체를 생성할 때 Refle
 
  만약 기본 생성자가 private으로 선언되어 있다면 해당 엔티티를 상속한 프록시를 만들 수 없을 것이다. 상속한 객체의 생성자는 반드시 부모 객체의 생성자 super를 호출해야 하는데, private이면 상속받은 클래스에서 호출할 수 없기 때문이다.
 ```
+
+
+
+## SETTER 사용을 지양
+
+```java
+@Getter
+public class ArticleResponse {
+    private final String title;
+    private final String content;
+
+    public ArticleResponse(Article article) {
+        this.title = article.getTitle();
+        this.content = article.getContent();
+    }
+}
+```
+
+### 1. 사용한 의도를 쉽게 파악하기 어렵다.
+
+- Setter를 사용하게 되면 값을 생성하는 것인지 변경하는 것인지 정확한 의도를 파악하기 어렵다.
+
+- 객체의 내부 값이 복잡한 경우 더욱 한 눈에 파악하기 힘들 것이다.
+
+  
+
+### 2. 객체의 일관성을 유지하기 힘들다.
+
+- 객체의 내용을 Update하는 method 밖에서도 Setter를 활용하면 객체의 내용을 바꿀 수 있다.
+- 따라서 POST 객체의 일관성이 무너지게 된다.
 
 
 
