@@ -22,7 +22,7 @@
 
 #### 필터 상세 기능
 
-<img src="https://github.com/Duhui-Kim/CodingTest_JAVA/assets/118238663/0f31589d-c720-43d3-afd8-ba15560b6e73" alt="그림1" style="zoom:20%;" />
+<img src="https://github.com/Duhui-Kim/BlogProject/assets/118238663/dabc27fb-106d-4d91-9c7c-c3a068f906a2" alt="그림1" style="zoom:20%;" />
 
 
 
@@ -70,7 +70,7 @@
 
 ### Method
 
-<img src="https://github.com/Duhui-Kim/CodingTest_JAVA/assets/118238663/17b9e7a6-1ea7-41b6-9930-76768c9cb04c" alt="그림3" style="zoom: 18%;" />
+<img src="https://github.com/Duhui-Kim/BlogProject/assets/118238663/adbc268a-a7f8-4986-a590-b79e8fd3b2d9" alt="그림3" style="zoom:20%;" />
 
 #### orElse()와 orElseGet() & orElseThrow()의 차이점
 
@@ -112,3 +112,19 @@
 
 
 ## JWT
+
+### 정의
+
+- Java Web Token의 약자
+- Header, Payload, Signature로 구성
+
+### 특징
+
+- 무상태성(Stateless) : 서버에서 클라이언트의 인증 정보를 유지하지 않아도 됨.
+- 확장성 : 토큰의 주체가 클라이언트이기 때문에 하나의 토큰으로 여러 서버에 접근 가능.
+- 무결성 : HMAC(Hash-based Message Authenication) 기법으로 토큰을 발급한 이후에 토큰 변경 불가능.
+
+### 리프레시 토큰
+
+- 토큰을 주고 받는 환경이 보안에 취약해서 토큰이 노출되었을 경우, 악용될 수 있음.
+- 액세스 토큰의 유효기간을 짧게 설정하고, 리프레시 토큰의 유효기간은 길게 설정

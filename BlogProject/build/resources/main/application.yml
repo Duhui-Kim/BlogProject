@@ -14,3 +14,7 @@ spring:
   h2:
     console:
       enabled: true
+
+jwt:
+  issuer: dadada022863@gmail.com
+  secret_key: Duhui-blogProject
