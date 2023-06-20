@@ -19,12 +19,12 @@ spring:
       client:
         registration:
           google:
-            client-id: 794815308205-qosptuhu0oig6pc9nrqntb3ub2h197hi.apps.googleusercontent.com
-            client-secret: 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
+            client-id : 
+            client-secret: 
             scope:
               - email
               - profile
 
 jwt:
   issuer: dadada022863@gmail.com
-  secret_key: Duhui-blogProject
+  secret_key: 
