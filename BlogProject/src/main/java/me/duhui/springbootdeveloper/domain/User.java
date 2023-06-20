@@ -23,26 +23,31 @@ public class User implements UserDetails {
     @Column(name = "id", updatable = false)
     private Long id;
 
+    @Column(name = "nickname", unique = true)
+    private String nickname;
+
     @Column(name = "email", nullable = false, unique = true)
     private String email;
     @Column(name = "password")
     private String password;
 
     @Builder
-    public User(String email, String password, String auth) {
+    public User(String email, String password, String nickname) {
         this.email = email;
         this.password = password;
+        this.nickname = nickname;
+    }
+
+    // 사용자의 이름 변경
+    public User update(String nickname) {
+        this.nickname = nickname;
+        return this;
     }
 
     // 권한 반환
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> list = List.of(new SimpleGrantedAuthority("user"));
-
-        for(GrantedAuthority g : list) {
-            System.out.println(g.toString());
-        }
-
         return list;
     }
     // 사용자의 패스워드를 반환

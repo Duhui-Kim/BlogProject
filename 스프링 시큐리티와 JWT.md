@@ -85,7 +85,7 @@
   // 이런 method가 있다고 가정하면
   public String testMethod() {
   	System.out.println("이거 실행되나?");
-      return "Null";
+      return "테스트";
   }
   
   // orElse

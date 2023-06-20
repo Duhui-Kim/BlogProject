@@ -12,10 +12,11 @@ public class AddArticleRequest {
 
     private String title;
     private String content;
-    public Article toEntity() { // dto로 받은 객체를 Entity로 전환
+    public Article toEntity(String author) { // dto로 받은 객체를 Entity로 전환
         return Article.builder()
                 .title(title)
                 .content(content)
+                .author(author)
                 .build();
     }
 }
