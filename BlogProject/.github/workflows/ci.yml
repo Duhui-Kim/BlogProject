@@ -4,7 +4,7 @@ name: CI
 # 2. 워크플로가 시작될 조건 지정
 on:
   push:
-    branches: [ "master" ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
 
       - uses: actions/setup-java@v3
         with:
-          distribution: 'zulu'
+          distribution: 'corretto'
           java-version: '17'
 
       - name: Grant execute permission for gradlew
