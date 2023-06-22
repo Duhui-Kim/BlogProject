@@ -20,4 +20,4 @@ jobs:
         run: chmod +x BlogProject/gradlew
 
       - name: Build with Gradle
-        run: ./gradlew clean build
+        run: ./BlogProject/gradlew clean build
