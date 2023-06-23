@@ -20,7 +20,7 @@ jobs:
         run: cd BlogProject; chmod +x gradlew
 
       - name: Build with Gradle
-        run: cd BlogProject; ./gradlew clean build
+        run: ./BlogProject/gradlew clean build
 
       - name: Get current time
         uses: josStorer/get-current-time@v2.0.2
