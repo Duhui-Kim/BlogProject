@@ -8,24 +8,14 @@ spring:
     defer-datasource-initialization: true
 
     # datasource 설정
-#    datasource:
-#      driver-class-name: org.h2.Driver
-#      url: jdbc:h2:mem:testdb
-#      username: sa
+  #    datasource:
+  #      driver-class-name: org.h2.Driver
+  #      url: jdbc:h2:mem:testdb
+  #      username: sa
   h2:
     console:
       enabled: true
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: secret
-            client-secret: secret
-            scope:
-              - email
-              - profile
 
-jwt:
-  issuer: dadada022863@gmail.com
-  secret_key: secret
+  config:
+    import:
+      - classpath:/application-key.yml
